@@ -1,0 +1,47 @@
+{
+  "name": "grunt-upcoming",
+  "description": "Generate upcoming release info in a JSON file",
+  "version": "0.1.0",
+  "homepage": "https://github.com/mitch/grunt-upcoming",
+  "author": {
+    "name": "Mitch Allen",
+    "email": "npm@mitchallen.com",
+    "url": "http://mitchallen.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mitch/grunt-upcoming.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mitch/grunt-upcoming/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/mitch/grunt-upcoming/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-bump": "^0.8.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-nodeunit": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-jsdoc-to-markdown": "^2.0.0",
+    "grunt-shell": "^2.1.0"
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "dependencies": {
+    "semver": "^5.3.0",
+    "util": "^0.10.3"
+  }
+}

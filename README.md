@@ -1,0 +1,156 @@
+# grunt-upcoming
+
+> Generate upcoming release info in a JSON file
+
+## Getting Started
+This plugin requires Grunt `~0.4.5`
+
+If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
+
+```shell
+npm install grunt-upcoming --save-dev
+```
+
+Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
+
+```js
+grunt.loadNpmTasks('grunt-upcoming');
+```
+
+## The "upcoming" task
+
+### Overview
+In your project's Gruntfile, add a section named `upcoming` to the data object passed into `grunt.initConfig()`.
+
+```js
+grunt.initConfig({
+    upcoming: {
+      default: {
+        files: {
+          'package.json': [
+            'version%s-info.json', 
+            'product%s-info.json']
+        }
+      },
+      patch: {
+        files: {
+          'package.json': ['patch-info.json']
+        }
+      }
+    },
+});
+```
+
+* * *
+
+### Configuration Options
+
+#### default.files
+
+Run the following from the command line:
+
+    $ grunt upcoming
+    
+For the example above, that command will generate two files:
+
+* version-info.json
+* product-info.json
+
+The contents will simply be:
+
+```js
+{
+	"name":"(package-name)",
+	"version":"(version)"
+}
+```
+
+The __package-name__ and __version__ will be what is currently in __package.json__ (the key in the config).
+
+For example:
+
+```js
+{
+	"name":"grunt-upcoming",
+	"version":"0.1.0"
+}
+```
+
+* * *
+
+Now run this:
+
+	$ grunt upcoming:major
+	
+That will generate:
+
+* version-major-info.json
+* product-major-info.json
+
+Because there was no config defined for __major__, the default was run by applying the major release argument. The files listed in the default section contain __'%s'__. That was replaced in the filename with __'-major'__.
+
+The output will look something like this:
+
+```js
+{
+	"name":"(package-name)",
+	"version":"(version)",
+	"upcoming": {
+		"release":"major",
+		"version":"(next-major-version)"
+	}
+}
+```
+
+For example:
+
+```js
+{
+	"name":"grunt-upcoming",
+	"version":"0.1.0",
+	"upcoming": {
+		"release":"major",
+		"version":"1.0.0"
+	}
+}
+```
+
+* * *
+
+#### (release).files
+
+Valid releases are:  __major__, __minor__, __patch__, __premajor__, __preminor__, __prepatch__, or __prerelease__.
+
+If no section is defined in the config for a release, the default will be used. To define a section for a release, create one named after the release (patch, minor, major, etc.).
+
+The example contains a configuration for __patch__.
+
+```js
+grunt.initConfig({
+    upcoming: {	
+      default: { ... },
+      patch: {
+        files: {
+          'package.json': ['patch-info.json']
+        }
+      }
+    },
+});
+```
+
+Run this at the command line:
+
+	$ grunt upcoming:patch
+
+This will result in the __patch-info.json__ file being created.
+
+
+
+
+* * *
+
+## Contributing
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
+
+## Release History
+_(Nothing yet)_
