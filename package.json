@@ -1,7 +1,7 @@
 {
   "name": "grunt-upcoming",
   "description": "Generate upcoming release info in a JSON file",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/mitch/grunt-upcoming",
   "author": {
     "name": "Mitch Allen",
