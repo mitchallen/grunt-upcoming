@@ -3,12 +3,14 @@
 > Generate upcoming release info to a JSON file
 
 <p align="left">
+<!--
   <a href="https://travis-ci.org/mitchallen/grunt-upcoming">
     <img src="https://img.shields.io/travis/mitchallen/grunt-upcoming.svg?style=flat-square" alt="Version">
   </a>
   <a href="https://codecov.io/gh/mitchallen/grunt-upcoming">
     <img src="https://codecov.io/gh/mitchallen/grunt-upcoming/branch/master/graph/badge.svg" alt="Coverage Status">
   </a>
+-->
   <a href="https://npmjs.org/package/grunt-upcoming">
     <img src="http://img.shields.io/npm/dt/grunt-upcoming.svg?style=flat-square" alt="Downloads">
   </a>
@@ -171,6 +173,10 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 * * *
 
 ## Version History
+
+#### Version 0.1.3
+
+* cleaned up test folder
 
 #### Version 0.1.2
 

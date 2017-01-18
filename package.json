@@ -30,7 +30,8 @@
     "grunt-contrib-nodeunit": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-jsdoc-to-markdown": "^2.0.0",
-    "grunt-shell": "^2.1.0"
+    "grunt-shell": "^2.1.0",
+    "istanbul": "^0.4.5"
   },
   "keywords": [
     "gruntplugin"
