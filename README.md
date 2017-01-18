@@ -145,8 +145,6 @@ Run this at the command line:
 This will result in the __patch-info.json__ file being created.
 
 
-
-
 * * *
 
 ## Contributing
@@ -155,6 +153,10 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 * * *
 
 ## Version History
+
+#### Version 0.1.1 
+
+* if no config info will echo warning to console
 
 #### Version 0.1.0 
 
