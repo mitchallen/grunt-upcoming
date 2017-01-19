@@ -2,7 +2,7 @@
   "name": "grunt-upcoming",
   "description": "Write upcoming release info to a JSON file",
   "version": "0.1.5",
-  "homepage": "https://github.com/mitch/grunt-upcoming",
+  "homepage": "https://github.com/mitchallen/grunt-upcoming",
   "author": {
     "name": "Mitch Allen",
     "email": "npm@mitchallen.com",
@@ -20,9 +20,11 @@
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "test-coverage": "./node_modules/.bin/istanbul cover _mocha"
   },
   "devDependencies": {
+    "fs-extra": "^2.0.0",
     "grunt": "^1.0.1",
     "grunt-bump": "^0.8.0",
     "grunt-contrib-clean": "^1.0.0",
@@ -30,8 +32,12 @@
     "grunt-contrib-nodeunit": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-jsdoc-to-markdown": "^2.0.0",
+    "grunt-mocha-test": "^0.13.2",
     "grunt-shell": "^2.1.0",
-    "istanbul": "^0.4.5"
+    "istanbul": "^0.4.5",
+    "mv": "^2.1.1",
+    "should": "^11.1.2",
+    "supertest": "^2.0.1"
   },
   "keywords": [
     "gruntplugin",

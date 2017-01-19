@@ -1,6 +1,6 @@
 /*
  * grunt-upcoming
- * https://github.com/mitch/grunt-upcoming
+ * https://github.com/mitchallen/grunt-upcoming
  *
  * Copyright (c) 2017 Mitch Allen
  * Licensed under the MIT license.
@@ -19,6 +19,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks('grunt-jsdoc-to-markdown');
+  grunt.loadNpmTasks('grunt-mocha-test');
 
   // Project configuration.
   grunt.initConfig({
@@ -39,7 +40,7 @@ module.exports = function(grunt) {
 
     // Before generating any new files, remove any previously-created files.
     clean: {
-      tests: ['tmp']
+      tests: ['test/tmp']
     },
 
     // Configuration to be run (and then tested).
@@ -47,13 +48,13 @@ module.exports = function(grunt) {
       default: {
         files: {
           'package.json': [
-            'tmp/version%s-info.json', 
-            'tmp/product%s-info.json']
+            'test/tmp/version%s-info.json', 
+            'test/tmp/product%s-info.json']
         }
       },
       patch: {
         files: {
-          'package.json': ['tmp/patch-info.json']
+          'package.json': ['test/tmp/patch-info.json']
         }
       }
     },
@@ -106,10 +107,24 @@ module.exports = function(grunt) {
         }
     },
 
+    mochaTest: {
+      test: {
+        options: {
+          reporter: 'spec',
+          captureFile: 'results.txt', // Optionally capture the reporter output to a file
+          quiet: false, // Optionally suppress output to standard out (defaults to false)
+          clearRequireCache: false, // Optionally clear the require cache before running tests (defaults to false)
+          noFail: false // Optionally set to not fail on failed tests (will still fail on other errors)
+        },
+        src: ['test/**/*.js']
+      }
+    }
+
   });
 
   grunt.registerTask('default', ['build']);
-  grunt.registerTask('test', ['clean', 'upcoming', 'upcoming:patch', 'upcoming:major', 'nodeunit']);
+  grunt.registerTask('pretest', ['clean', 'upcoming', 'upcoming:patch', 'upcoming:major']);
+  grunt.registerTask('test', ['pretest', 'mochaTest']);
   grunt.registerTask('build-doc', ['jsdoc2md']);
   grunt.registerTask('build', ['jshint', 'test']);
   grunt.registerTask('pubinit', ['build','shell:pubinit']);

@@ -1,6 +1,6 @@
 /*
  * grunt-upcoming
- * https://github.com/mitch/grunt-upcoming
+ * https://github.com/mitchallen/grunt-upcoming
  *
  * Copyright (c) 2017 Mitch Allen
  * Licensed under the MIT license.
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
         } else {
           grunt.log.writeln( release + ": " + srcVersion + ' --> ' +  upcomingVersion );
           releaseInfo.upcoming = {
-            release: release || "current",
+            release: release,
             version: upcomingVersion || srcVersion
           };
         }
