@@ -20,7 +20,7 @@
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "test": "grunt test",
+    "test": "mocha",
     "test-coverage": "./node_modules/.bin/istanbul cover _mocha"
   },
   "devDependencies": {
