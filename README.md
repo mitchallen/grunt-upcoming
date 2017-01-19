@@ -172,6 +172,10 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Version History
 
+#### Version 0.1.7
+
+* added local install of mocha, needed by travis-ci
+
 #### Version 0.1.6
 
 * added test cases
