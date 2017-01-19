@@ -174,6 +174,10 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Version History
 
+#### Version 0.1.5
+
+* fixed repo url in package.json
+
 #### Version 0.1.4
 
 * updated description

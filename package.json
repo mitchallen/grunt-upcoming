@@ -10,10 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mitch/grunt-upcoming.git"
+    "url": "git://github.com/mitchallen/grunt-upcoming.git"
   },
   "bugs": {
-    "url": "https://github.com/mitch/grunt-upcoming/issues"
+    "url": "https://github.com/mitchallen/grunt-upcoming/issues"
   },
   "license": "MIT",
   "engines": {
@@ -34,7 +34,11 @@
     "istanbul": "^0.4.5"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin",
+    "release",
+    "version",
+    "build",
+    "browserify"
   ],
   "dependencies": {
     "semver": "^5.3.0",
