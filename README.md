@@ -172,6 +172,10 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Version History
 
+#### Version 0.1.9
+
+* refactored test cases
+
 #### Version 0.1.8
 
 * removed result file from repo

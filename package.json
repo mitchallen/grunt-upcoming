@@ -21,7 +21,7 @@
   },
   "scripts": {
     "test": "mocha",
-    "test-coverage": "./node_modules/.bin/istanbul cover _mocha"
+    "test-coverage": "./node_modules/.bin/istanbul cover _mocha -R"
   },
   "devDependencies": {
     "fs-extra": "^2.0.0",
