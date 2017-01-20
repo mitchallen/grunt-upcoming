@@ -13,6 +13,9 @@ module.exports.create = function(spec) {
 
     spec = spec || {};
 
+    var build = spec.build,
+        grunt = spec.grunt;
+
     var pkgName = require("../../package.json").name,
         pkgVersion = require("../../package.json").version;
 
@@ -36,8 +39,8 @@ module.exports.create = function(spec) {
             }});
         },
 
-        testDefaultConfig: function( done, grunt, release, gruntFile ) {
-            fs.copySync('./test/source/' + gruntFile, gruntFile );
+        testDefaultConfig: function( done, release, gruntFile ) {
+            fs.copySync('./test/' + build + '/source/' + gruntFile, gruntFile );
             var _self = this;
             grunt.tasks(['clean','upcoming:' + release ], { gruntfile: "./" + gruntFile, color: false }, function() {
                 fs.readFileSync("test/tmp/FOO-" + release + "-info.json").toString().should.eql(_self.getExpected( { release: release } ));
