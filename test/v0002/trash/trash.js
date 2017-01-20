@@ -18,7 +18,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     // used by the changelog task
-    pkg: grunt.file.readJSON('test/v0001/source/no-pkg-name.json'),
+    pkg: grunt.file.readJSON('package.json'),
 
 
     // Before generating any new files, remove any previously-created files.
@@ -29,12 +29,15 @@ module.exports = function(grunt) {
     // Configuration to be run (and then tested).
     upcoming: {
       default: {
-        files: {
-          'package.json': [
-            'test/tmp/FOO%s-info.json', 
-            'test/tmp/BAR%s-info.json']
-        }
+        files: [
+          { src: 'package.json', dest: [ 'test/tmp/v2-FOO%s-info.json', 'test/tmp/v2-BAR%s-info.json' ] }
+        ]
       },
+      patch: {
+        files: [ 
+          { src: 'package.json', dest: ['test/tmp/v2-patch-info.json'] }
+        ]
+      }
     },
 
   });

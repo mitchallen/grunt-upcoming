@@ -32,16 +32,7 @@ describe('plugin', () => {
     });
 
     afterEach( done => {
-        if( lastGruntFile ) {
-            mv( "./" + lastGruntFile, 'test/trash/trash.js', {clobber: true }, function(err) { 
-                if( err ) { 
-                    console.error("MV ERROR:" + err);
-                }
-                done();
-            });
-        } else {
-            done();
-        }
+        testUtils.trashFile( done, lastGruntFile );
     });
 
     it('run task', done => {  

@@ -7,7 +7,8 @@
 "use strict";
 
 var semver = require('semver'),
-    fs = require('fs-extra');
+    fs = require('fs-extra'),
+     mv = require('mv');
 
 module.exports.create = function(spec) { 
 
@@ -20,6 +21,21 @@ module.exports.create = function(spec) {
         pkgVersion = require("../../package.json").version;
 
     return {
+
+        trashFile: function(done, file) {
+            if( file ) {
+                mv( "./" + file, 'test/' + build + '/trash/trash.js', {clobber: true }, function(err) { 
+                    if( err ) { 
+                        var eMsg = "MV ERROR:" + err;
+                        console.error(eMsg);
+                        throw new Error(eMsg);
+                    }
+                    done();
+                });
+            } else {
+                done();
+            }
+        },
 
         defaultExpected: JSON.stringify({
             "name": pkgName,
