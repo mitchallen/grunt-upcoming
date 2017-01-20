@@ -131,4 +131,26 @@ describe('plugin', () => {
         });
     })
 
+    it('run task against multiple sets', done => {  
+        // grunt.registerTask('zorro', ['upcoming', 'upcoming:patch', 'upcoming:major']);
+        lastGruntFile = "v2-test-multiple-sets.js";
+        fs.copySync('./test/' + build + '/source/' + lastGruntFile, lastGruntFile );
+        grunt.tasks(['clean','upcoming'], { gruntfile: "./" + lastGruntFile, color: false }, function() {
+            fs.readFileSync("test/tmp/v2-FOO-info.json").toString().should.eql(testUtils.defaultExpected);
+            fs.readFileSync("test/tmp/v2-BAR-info.json").toString().should.eql(testUtils.defaultExpected);
+            fs.readFileSync("test/tmp/v2-info.json").toString().should.eql(testUtils.defaultExpected);
+            done();
+        });
+    })
+
+    it('run task patch config defined with multiple sets', done => {  
+        lastGruntFile = "v2-test-multiple-sets.js";
+        fs.copySync('./test/' + build + '/source/' + lastGruntFile, lastGruntFile );
+        grunt.tasks(['clean','upcoming:patch'], { gruntfile: "./" + lastGruntFile, color: false }, function() {
+            fs.readFileSync("test/tmp/v2-patch-info.json").toString().should.eql(testUtils.getExpected( { release: "patch" } ));
+            fs.readFileSync("test/tmp/v2-patch-again-info.json").toString().should.eql(testUtils.getExpected( { release: "patch" } ));
+            done();
+        });
+    })
+
 });
