@@ -21,7 +21,7 @@
   },
   "scripts": {
     "test": "mocha --recursive",
-    "test-coverage": "./node_modules/.bin/istanbul cover _mocha -R"
+    "test-coverage": "./node_modules/.bin/istanbul cover _mocha --recursive test/**/*"
   },
   "devDependencies": {
     "fs-extra": "^2.0.0",
