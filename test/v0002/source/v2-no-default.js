@@ -28,13 +28,11 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     upcoming: {
-      default: {
-        files: {
-          'package.json': [
-            'test/tmp/FOO%s-info.json', 
-            'test/tmp/BAR%s-info.json']
-        }
-      },
+      patch: {
+        files: [
+          { src: 'package.json', dest: ['test/tmp/v2-FOO-patch-info.json'] }
+        ]
+      }
     },
 
   });

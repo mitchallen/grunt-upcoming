@@ -26,7 +26,8 @@ describe('plugin', () => {
         grunt = require('grunt');
         testUtils = testUtilsFactory.create({
             grunt: grunt,
-            build: build
+            build: build,
+            outPrefix: "v2-"
         });
         done();
     });
@@ -55,79 +56,79 @@ describe('plugin', () => {
         });
     })
 
-    // it('run task patch default config', done => {  
-    //     lastGruntFile = "default-only.js"
-    //     testUtils.testDefaultConfig( done, "patch", lastGruntFile );
-    // })
+    it('run task patch default config', done => {  
+        lastGruntFile = "v2-default-only.js"
+        testUtils.testDefaultConfig( done, "patch", lastGruntFile );
+    })
 
-    // it('run task prepatch default config', done => {  
-    //     lastGruntFile = "default-only.js"
-    //     testUtils.testDefaultConfig( done, "prepatch", lastGruntFile );
-    // })
+    it('run task prepatch default config', done => {  
+        lastGruntFile = "v2-default-only.js"
+        testUtils.testDefaultConfig( done, "prepatch", lastGruntFile );
+    })
 
-    // it('run task minor default config', done => {  
-    //     lastGruntFile = "default-only.js"
-    //     testUtils.testDefaultConfig( done, "minor", lastGruntFile );
-    // })
+    it('run task minor default config', done => {  
+        lastGruntFile = "v2-default-only.js"
+        testUtils.testDefaultConfig( done, "minor", lastGruntFile );
+    })
 
-    // it('run task preminor default config', done => {  
-    //     lastGruntFile = "default-only.js"
-    //     testUtils.testDefaultConfig( done, "preminor", lastGruntFile );
-    // })
+    it('run task preminor default config', done => {  
+        lastGruntFile = "v2-default-only.js"
+        testUtils.testDefaultConfig( done, "preminor", lastGruntFile );
+    })
 
-    // it('run task major default config', done => { 
-    //     lastGruntFile = "default-only.js"
-    //     testUtils.testDefaultConfig( done, "major", lastGruntFile ); 
-    // })
+    it('run task major default config', done => { 
+        lastGruntFile = "v2-default-only.js"
+        testUtils.testDefaultConfig( done, "major", lastGruntFile ); 
+    })
 
-    // it('run task premajor default config', done => {  
-    //     lastGruntFile = "default-only.js"
-    //     testUtils.testDefaultConfig( done, "premajor", lastGruntFile );
-    // })
+    it('run task premajor default config', done => {  
+        lastGruntFile = "v2-default-only.js"
+        testUtils.testDefaultConfig( done, "premajor", lastGruntFile );
+    })
 
-    // it('run task prerelease default config', done => { 
-    //     lastGruntFile = "default-only.js"
-    //     testUtils.testDefaultConfig( done, "prerelease", lastGruntFile );
-    // })
+    it('run task prerelease default config', done => { 
+        lastGruntFile = "v2-default-only.js"
+        testUtils.testDefaultConfig( done, "prerelease", lastGruntFile );
+    })
 
-    // it('run task config and default not found should fail gracfully', done => {  
-    //     lastGruntFile = "no-default.js";
-    //     fs.copySync('./test/' + build + '/source/' + lastGruntFile, lastGruntFile );
-    //     grunt.tasks(['clean','upcoming:foo'], { gruntfile: "./" + lastGruntFile, color: false }, function() {
-    //         done();
-    //     });
-    // })
+    it('run task config and default not found should fail gracfully', done => {  
+        lastGruntFile = "v2-no-default.js";
+        fs.copySync('./test/' + build + '/source/' + lastGruntFile, lastGruntFile );
+        grunt.tasks(['clean','upcoming:foo'], { gruntfile: "./" + lastGruntFile, color: false }, function() {
+            done();
+        });
+    })
 
-    // it('run task default with bad release should fail gracfully', done => {  
-    //     lastGruntFile = "default-only.js";
-    //     fs.copySync('./test/' + build + '/source/' + lastGruntFile, lastGruntFile );
-    //     grunt.tasks(['clean','upcoming:foo'], { gruntfile: "./" + lastGruntFile, color: false }, function() {
-    //         done();
-    //     });
-    // })
+    it('run task default with bad release should fail gracfully', done => {  
+        lastGruntFile = "v2-default-only.js";
+        fs.copySync('./test/' + build + '/source/' + lastGruntFile, lastGruntFile );
+        grunt.tasks(['clean','upcoming:foo'], { gruntfile: "./" + lastGruntFile, color: false }, function() {
+            done();
+        });
+    })
 
-    // it('run task with no config should fail gracefully', done => { 
-    //     lastGruntFile = "no-config.js";
-    //     fs.copySync('./test/' + build + '/source/' + lastGruntFile, lastGruntFile );
-    //     grunt.tasks(['clean','upcoming:patch'], { gruntfile: "./" + lastGruntFile, color: false }, function() {
-    //         done();
-    //     });
-    // })
+    it('run task with no config should fail gracefully', done => { 
+        lastGruntFile = "v2-no-config.js";
+        fs.copySync('./test/' + build + '/source/' + lastGruntFile, lastGruntFile );
+        grunt.tasks(['clean','upcoming:patch'], { gruntfile: "./" + lastGruntFile, color: false }, function() {
+            done();
+        });
+    })
 
-    // it('run task with no package version should fail gracefully', done => { 
-    //     lastGruntFile = "no-pkg-version.js";
-    //     fs.copySync('./test/' + build + '/source/' + lastGruntFile, lastGruntFile );
-    //     grunt.tasks(['clean','upcoming:patch'], { gruntfile: "./" + lastGruntFile, color: false }, function() {
-    //         done();
-    //     });
-    // })
+    it('run task with no package version should fail gracefully', done => { 
+        lastGruntFile = "v2-no-pkg-version.js";
+        fs.copySync('./test/' + build + '/source/' + lastGruntFile, lastGruntFile );
+        grunt.tasks(['clean','upcoming:patch'], { gruntfile: "./" + lastGruntFile, color: false }, function() {
+            done();
+        });
+    })
 
-    // it('run task with no package name should fail gracefully', done => { 
-    //     lastGruntFile = "no-pkg-name.js";
-    //     fs.copySync('./test/' + build + '/source/' + lastGruntFile, lastGruntFile );
-    //     grunt.tasks(['clean','upcoming:patch'], { gruntfile: "./" + lastGruntFile, color: false }, function() {
-    //         done();
-    //     });
-    // })
+    it('run task with no package name should fail gracefully', done => { 
+        lastGruntFile = "v2-no-pkg-name.js";
+        fs.copySync('./test/' + build + '/source/' + lastGruntFile, lastGruntFile );
+        grunt.tasks(['clean','upcoming:patch'], { gruntfile: "./" + lastGruntFile, color: false }, function() {
+            done();
+        });
+    })
 
 });
