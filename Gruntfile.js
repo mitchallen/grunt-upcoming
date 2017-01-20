@@ -112,5 +112,6 @@ module.exports = function(grunt) {
   grunt.registerTask('build', ['clean','jshint']);
   grunt.registerTask('pubinit', ['build','shell:pubinit']);
   grunt.registerTask('publish', ['build','bump','shell:publish']);
+  grunt.registerTask('pubminor', ['build','bump:minor','shell:publish']);
 
 };

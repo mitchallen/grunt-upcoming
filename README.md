@@ -41,22 +41,21 @@ grunt.loadNpmTasks('grunt-upcoming');
 In your project's Gruntfile, add a section named `upcoming` to the data object passed into `grunt.initConfig()`.
 
 ```js
-grunt.initConfig({
     upcoming: {
       default: {
-        files: {
-          'package.json': [
-            'version%s-info.json', 
-            'product%s-info.json']
-        }
+        files: [
+          { 
+          	src: 'package.json', 
+          	dest: [ 'test/tmp/FOO%s-info.json','test/tmp/BAR%s-info.json' ] 
+          }
+        ]
       },
       patch: {
-        files: {
-          'package.json': ['patch-info.json']
-        }
+        files: [ 
+          { src: 'package.json', dest: ['test/tmp/patch-info.json'] }
+        ]
       }
     },
-});
 ```
 
 * * *
@@ -144,16 +143,14 @@ If no section is defined in the config for a release, the default will be used. 
 The example contains a configuration for __patch__.
 
 ```js
-grunt.initConfig({
-    upcoming: {	
+    upcoming: {
       default: { ... },
       patch: {
-        files: {
-          'package.json': ['patch-info.json']
-        }
+        files: [ 
+          { src: 'package.json', dest: ['test/tmp/patch-info.json'] }
+        ]
       }
     },
-});
 ```
 
 Run this at the command line:
@@ -171,6 +168,11 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 * * *
 
 ## Version History
+
+#### Version 0.2.0
+
+* implemented version 0.2.0 which requires a more standard configuration
+* maintained backward compatibility and tests cases for deprecated version
 
 #### Version 0.1.9
 
