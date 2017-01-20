@@ -79,7 +79,7 @@ The contents will simply be:
 }
 ```
 
-The __package-name__ and __version__ will be what is currently in __package.json__ (the key in the config).
+The __package-name__ and __version__ will be what is currently in __package.json__ (the __src__ in the default config).
 
 For example:
 
@@ -165,6 +165,10 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 * * *
 
 ## Version History
+
+#### Version 0.2.2
+
+* updated documentation
 
 #### Version 0.2.1
 
